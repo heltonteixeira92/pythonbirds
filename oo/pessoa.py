@@ -1,5 +1,5 @@
 class Pessoa:
-    def __init__(self, *filhos, nome = None, idade =35):
+    def __init__(self, *filhos, nome = None, idade =35): #dander init
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
@@ -17,3 +17,7 @@ if __name__ == "__main__":
     print(luciano.idade)
     for filho in luciano.filhos:
         print(filho.nome)
+    luciano.sobrenome = 'Ramalho' #cria um atributo
+    del luciano.filhos #deleta um atributo
+    print(luciano.__dict__)
+    print(renzo.__dict__)
