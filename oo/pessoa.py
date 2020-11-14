@@ -8,6 +8,13 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod #decoretor, como se fosse ua função global
+    def metodo_estatico():
+        return 42
+    
+    @classmethod #é utilizado quando queremos acessar dados da propria classe
+    def nome_e_atributo_de_classe(cls):
+        return f'{cls} - olhos{cls.olhos}'
 if __name__ == "__main__":
     renzo = Pessoa(nome = 'Renzo')
     luciano = Pessoa(renzo,nome= 'Luciano')
@@ -28,3 +35,5 @@ if __name__ == "__main__":
     print(Pessoa.olhos)
     print(renzo.olhos)
     print( id(Pessoa.olhos), id(renzo.olhos), id(luciano.olhos))
+    print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
+    print(Pessoa.nome_e_atributo_de_classe(), luciano.metodo_estatico())
